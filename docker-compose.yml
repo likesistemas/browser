@@ -2,12 +2,22 @@ version: "3"
 
 services:
 
-  build-app:
-    image: likesistemas/browser:latest
+  build-go:
+    image: likesistemas/browser:golang
     build:
-      context: .
+      context: ./golang/
       dockerfile: Dockerfile
       args:
         - CERTIFICATE_PASSWORD=$CERT_PASSWORD
     volumes:
-      - ./output/:/output/
+      - ./output/golang/:/output/
+
+  build-java:
+    image: likesistemas/browser:latest
+    build:
+      context: ./java/
+      dockerfile: Dockerfile
+      args:
+        - CERTIFICATE_PASSWORD=$CERT_PASSWORD
+    volumes:
+      - ./output/java/:/output/

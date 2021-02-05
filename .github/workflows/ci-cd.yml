@@ -50,7 +50,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          file: ./java/Dockerfile
+          context: ./java/
           tags: likesistemas/browser:latest
           build-args: |
             CERT_PASSWORD=${{ secrets.CERT_PASSWORD }}
@@ -60,7 +60,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          file: ./golang/Dockerfile
+          context: ./golang/          
           tags: likesistemas/browser:golang
           build-args: |
             CERT_PASSWORD=${{ secrets.CERT_PASSWORD }}

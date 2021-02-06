@@ -1,22 +1,23 @@
 # Browser
 
 Docker image to generate execulable to open default browser in so.
+By default the executable opens the url http://127.0.0.1/. But you can pass a url by parameter to open the url that is needed.
 
-```docker
+```bash
 docker run -v ${PWD}/output/:/output/ likesistemas/browser:latest # Using java
 docker run -v ${PWD}/output/:/output/ likesistemas/browser:latest # Using golang
 ```
 
 or
 
-```docker
+```bash
 docker-compose up --build
 ```
 
 ## Build Params
 
-CERTIFICATE_PASSWORD: Certificate password. Default: 123456
-CERTIFICATE_PASSWORD: Certificate password. Default: 123456
+- CERTIFICATE_PASSWORD: Certificate password. Default: 123456
+- DEFAULT_URL: Default url to be opened. Default: http://127.0.0.1/ # Only support for golang image
 
 ## Multstage Builds
 

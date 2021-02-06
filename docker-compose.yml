@@ -5,8 +5,8 @@ services:
   build-go:
     image: likesistemas/browser:golang
     build:
-      context: ./golang/
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ./golang/Dockerfile
       args:
         - CERTIFICATE_PASSWORD=$CERT_PASSWORD
     volumes:
@@ -15,8 +15,8 @@ services:
   build-java:
     image: likesistemas/browser:latest
     build:
-      context: ./java/
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ./java/Dockerfile
       args:
         - CERTIFICATE_PASSWORD=$CERT_PASSWORD
     volumes:

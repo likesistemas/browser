@@ -5,7 +5,7 @@ ARG DEFAULT_URL="http://127.0.0.1/"
 RUN apk update && apk add --no-cache git
 WORKDIR $GOPATH/src/likesistemas/browser/
 RUN go get github.com/josephspurrier/goversioninfo/cmd/goversioninfo
-COPY main.go favicon.ico versioninfo.json ./
+COPY golang/main.go favicon.ico golang/versioninfo.json ./
 RUN go get -d -v
 RUN goversioninfo
 RUN go generate

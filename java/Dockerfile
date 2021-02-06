@@ -6,10 +6,11 @@ ENV CERT_PASSWORD=${CERTIFICATE_PASSWORD}
 
 FROM maven:3-openjdk-8-slim as jar
 WORKDIR /home/app/
-COPY pom.xml .
+COPY java/pom.xml .
 RUN mvn -f pom.xml dependency:go-offline -B
-COPY src src
+COPY java/src src
 COPY favicon.ico .
+RUN mvn -f pom.xml package
 RUN mvn -f pom.xml package
 
 FROM sign as exe-sign

@@ -11,7 +11,6 @@ RUN mvn -f pom.xml dependency:go-offline -B
 COPY java/src src
 COPY favicon.ico .
 RUN mvn -f pom.xml package
-RUN mvn -f pom.xml package
 
 FROM sign as exe-sign
 COPY --from=jar /home/app/target/OpenBrowser.exe app.exe

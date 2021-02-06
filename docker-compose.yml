@@ -8,7 +8,7 @@ services:
       context: .
       dockerfile: ./golang/Dockerfile
       args:
-        - CERTIFICATE_PASSWORD=$CERT_PASSWORD
+        - CERTIFICATE_PASSWORD=$CERTIFICATE_PASSWORD
     volumes:
       - ./output/golang/:/output/
 
@@ -18,6 +18,6 @@ services:
       context: .
       dockerfile: ./java/Dockerfile
       args:
-        - CERTIFICATE_PASSWORD=$CERT_PASSWORD
+        - CERTIFICATE_PASSWORD=$CERTIFICATE_PASSWORD
     volumes:
       - ./output/java/:/output/

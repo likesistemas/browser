@@ -17,7 +17,7 @@ jobs:
 
       - name: Build image
         run: |
-          echo "CERT_PASSWORD=${{ secrets.CERT_PASSWORD }}" >> .env
+          echo "CERTIFICATE_PASSWORD=${{ secrets.CERT_PASSWORD }}" >> .env
           docker-compose up --build
 
       - name: Upload files
@@ -53,7 +53,7 @@ jobs:
           file: ./java/Dockerfile
           tags: likesistemas/browser:latest
           build-args: |
-            CERT_PASSWORD=${{ secrets.CERT_PASSWORD }}
+            CERTIFICATE_PASSWORD=${{ secrets.CERT_PASSWORD }}
 
       - name: Build and push using golang
         id: docker_build_golang
@@ -63,7 +63,7 @@ jobs:
           file: ./golang/Dockerfile
           tags: likesistemas/browser:golang
           build-args: |
-            CERT_PASSWORD=${{ secrets.CERT_PASSWORD }}
+            CERTIFICATE_PASSWORD=${{ secrets.CERT_PASSWORD }}
 
       - name: Image digest
         run: |
